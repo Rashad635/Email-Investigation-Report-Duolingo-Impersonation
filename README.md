@@ -7,15 +7,15 @@
 
 ## Incident Overview
 
-On 2025 11:50:03 UTC, an email was delivered to inquiry@mydfir.com claiming to represent Duolingo and proposing a content collaboration.
+On 2025 11:50:03 UTC, an email was delivered to inquiry[@]mydfir[.]com claiming to represent Duolingo and proposing a content collaboration.
 
 The message identified the sender as:
 
-- Duolingo (duolingo[.]ads@libero[.]it)
+- Duolingo (duolingo.ads[@]libero[.]it)
 
 while directing replies to:
 
-- info@duolingo-team[.]com 
+- info[@]duolingo-team[.]com 
 
 The message was transmitted through Libero/Italiaonline mail infrastructure and successfully passed SPF and DKIM validation for libero[.]it. The authentication results therefore validate the sending infrastructure and DKIM signature associated with libero[.]it and do not establish that the sender was an authorized representative of Duolingo.
 
@@ -43,23 +43,25 @@ Based on the available evidence, the email is assessed as suspicious brand-imper
 | Message-ID | `<0f5c8c2cbd890d58d8d4bf017977935b@smtp-34.iol.local>` |
 | Date header | Missing |
 
-(See Appendix B, Section 1)
+**Reference: See Appendix B, Section 1.**
 
-3. Mail Path 
+## Mail Path
 
-[90[.]160[.]50[.]35]
+```text
+90[.]160[.]50[.]35
         ↓
 smtp-34[.]iol[.]local
         ↓
 smtp-34[.]italiaonline[.]it / 213[.]209[.]10[.]34
         ↓
-srv7.swhc.ca
+srv7[.]swhc[.]ca
         ↓
-inquiry@mydfir.com
+inquiry[@]mydfir[.]com
 
-(See Appendix B, Section 2)
+```
+**Reference: See Appendix B, Section 2.**
 
-4. Authentication Analysis 
+## Authentication Analysis 
 
 SPF returned: SPF_PASS
 
