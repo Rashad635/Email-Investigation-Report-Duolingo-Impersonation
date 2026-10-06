@@ -279,7 +279,7 @@ The absence of a Date: header is an email-format anomaly but does not independen
 
 ## 11. 5 Ws and How
 
-**Who***
+**Who**
 
 The message claimed to originate from `Duolingo`.
 
@@ -547,7 +547,7 @@ The available evidence therefore supports classifying the artifact as a suspicio
 
 - `duolingo[.]ads[@]libero[.]it`
 - `info[@]duolingo-team[.]com`
-- 
+  
 **Domains**
 
 - `libero[.]it`
@@ -789,100 +789,69 @@ The message was therefore classified as non-spam by the receiving system.
 
 ## Appendix C: Threat Intelligence References
 
-C.1 Official Duolingo domain
-duolingo[.]com
+**C.1 Official Duolingo domain**
 
-The official Duolingo domain was used as the baseline for comparison with the sender and Reply-To domains.
+<img width="936" height="470" alt="Official Duolingo domain" src="https://github.com/user-attachments/assets/1c36e0c0-f67f-4065-95d1-41810e7bc9c3" />
 
-C.2 duolingo-team[.]com
+---
 
-Domain-registration and threat-intelligence research identified the domain as associated with reported Duolingo impersonation/phishing activity.
+**C.2 duolingo-team[.]com**
 
-The domain was registered on:
+<img width="1670" height="662" alt="duolingo-team com " src="https://github.com/user-attachments/assets/13c3038e-4ae1-440a-8d13-141e06ee421c" />
 
-2025-07-10
+---
 
-The email was delivered on:
+**C.3 libero[.]it**
 
-2025-07-13
+<img width="1918" height="877" alt="libero it_VT" src="https://github.com/user-attachments/assets/d3289adf-bb2a-46ed-80fa-664133529a2f" />
+<img width="1796" height="805" alt="libero it" src="https://github.com/user-attachments/assets/ff2158aa-dfe5-4406-92bb-2858602f4ca1" />
 
-This represents an approximately three-day interval between domain registration and email delivery.
+---
 
-C.3 libero[.]it
+**C.4 90[.]160[.]50[.]35**
 
-Domain information identifies libero[.]it as a legitimate domain operated by Italiaonline S.p.A.
+<img width="1337" height="773" alt="90 160 50 35" src="https://github.com/user-attachments/assets/decc4537-bd10-439e-9973-3769779d0473" />
+<img width="1366" height="762" alt="90 160 50 35" src="https://github.com/user-attachments/assets/0b241175-fce7-4e34-a2e8-21193e195a8a" />
+<img width="1783" height="796" alt="90 160 50 35" src="https://github.com/user-attachments/assets/96b6cf52-e0b8-40d8-9e87-0bd8aa3b3f73" />
 
-Recorded domain creation:
+---
 
-1999-06-03
+**C.5 italiaonline.it: 213[.]209[.]17[.]209**
 
-The domain should therefore not be treated as malicious solely because it was used in the sender address.
+<img width="1771" height="785" alt="213 209 17 209" src="https://github.com/user-attachments/assets/7797544a-70b2-40a9-95cb-5c57d6d7e96b" />
+<img width="1912" height="867" alt="italiaonline it" src="https://github.com/user-attachments/assets/5244c806-9962-48c7-b6c8-5a1c80e2eced" />
 
-C.4 90[.]160[.]50[.]35
+---
 
-Threat-intelligence information reviewed:
+**C.6 213[.]209[.]10[.]34**
 
-IP type: Public IPv4
-Network type: Residential ISP
-Geolocation: Barcelona, Catalonia, Spain
-VPN: Not identified
-Proxy: Not identified
-Tor: Not identified
-Hosting: Not identified
-AbuseIPDB reports: 0
-Abuse confidence: 0%
+<img width="1815" height="810" alt="213 209 10 34" src="https://github.com/user-attachments/assets/87e0cfe2-215d-4bd6-8b96-c9b6e8f96de7" />
 
-The IP should not be treated as proof of the sender's physical identity or location.
+---
 
-C.5 213[.]209[.]17[.]209
+## Appendix D: Analyst Assessment
 
-Related Libero/Italiaonline infrastructure identified through threat-intelligence research:
+**Key findings**
 
-ISP: Italiaonline S.p.A.
-Usage type: Fixed Line ISP
-ASN: AS8660
-Domain: italiaonline.it
-Location: Milan, Lombardy, Italy
-AbuseIPDB reports: 9
-Most recent report: Approximately 2 years ago
-VirusTotal detection: 1/91
+| Finding | Assessment |
+|---|---|
+| SPF | PASS for `libero[.]it` |
+| DKIM | PASS for `libero[.]it` |
+| Claimed organization | Duolingo |
+| Sender domain | `libero[.]it` |
+| Reply-To domain | `duolingo-team[.]com` |
+| Reply-To domain registration | 2025-07-10 |
+| Email delivery | 2025-07-13 15:50:03 UTC |
+| Attachment | None observed |
+| URL | None observed |
+| Sender IP reputation | No current AbuseIPDB reports |
+| Primary concern | Brand impersonation / social engineering |
+| Confirmed endpoint compromise | Not established |
 
-This IP was not observed in the primary mail path.
+## Final assessment
 
-C.6 213[.]209[.]10[.]34
+**Classification:** Suspicious Brand Impersonation / Social Engineering
 
-Observed SMTP infrastructure:
-
-Hostname: smtp-34[.]italiaonline[.]it
-ISP: Italiaonline S.p.A.
-Usage type: Fixed Line ISP
-ASN: AS8660
-Domain: italiaonline.it
-Location: Milan, Lombardy, Italy
-AbuseIPDB reports: 10
-Most recent report: Approximately 2 months ago
-
-Because the IP belongs to shared email-provider infrastructure, reputation results should be interpreted in context and should not independently be treated as evidence that the provider or the investigated email is malicious.
-
-Appendix D: Analyst Assessment
-Key findings
-Finding	Assessment
-SPF	PASS for libero[.]it
-DKIM	PASS for libero[.]it
-Claimed organization	Duolingo
-Sender domain	libero[.]it
-Reply-To domain	duolingo-team[.]com
-Reply-To domain registration	2025-07-10
-Email delivery	2025-07-13 15:50:03 UTC
-Attachment	None observed
-URL	None observed
-Sender IP reputation	No current AbuseIPDB reports
-Primary concern	Brand impersonation / social engineering
-Confirmed endpoint compromise	Not established
-Final assessment
-
-Classification: Suspicious Brand Impersonation / Social Engineering
-
-Confidence: Moderate
+**Confidence:** Moderate
 
 The evidence supports suspicion of brand impersonation and social-engineering activity, but the supplied email artifact alone does not establish malicious payload delivery, credential theft, user interaction, or endpoint compromise.
