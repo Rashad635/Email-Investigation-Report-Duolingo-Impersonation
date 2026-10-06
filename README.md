@@ -71,7 +71,7 @@ inquiry[@]mydfir[.]com
 ```
 **Observed source IP**
 
-90[.]160[.]50[.]35 was recorded in the Received: header as the connecting source for the SMTP submission to Libero infrastructure.
+`90[.]160[.]50[.]35` was recorded in the Received: header as the connecting source for the SMTP submission to Libero infrastructure.
 
 It should be treated as the observed SMTP submission source IP, rather than definitively identifying the physical sender or device.
 
@@ -79,11 +79,11 @@ It should be treated as the observed SMTP submission source IP, rather than defi
 
 The message was subsequently handled by:
 
-- smtp-34[.]iol[.]local
-- smtp-34[.]italiaonline[.]it
-- srv7[.]swhc[.]ca
+- `smtp-34[.]iol[.]local`
+- `smtp-34[.]italiaonline[.]it`
+- `srv7[.]swhc[.]ca`
 
-The public-facing Italiaonline SMTP server identified in the mail path was 213[.]209[.]10[.]34.
+The public-facing Italiaonline SMTP server identified in the mail path was `213[.]209[.]10[.]34`.
 
 **Reference:** See Appendix B, Section 2.
 
@@ -99,17 +99,17 @@ The email passed SPF validation:
 
 The SPF result indicates that the sending infrastructure was authorized by the SPF policy for the envelope sender domain:
 
-- libero[.]it
+- `libero[.]it`
 
-The SPF evaluation therefore establishes authorization of the sending infrastructure for libero[.]it. It does not establish that the sender was affiliated with Duolingo.
+The SPF evaluation therefore establishes authorization of the sending infrastructure for `libero[.]it`. It does not establish that the sender was affiliated with Duolingo.
 
 The relevant distinction is:
 
 SPF authentication:
-- 213[.]209[.]10[.]34 → authorized for libero[.]it
+- `213[.]209[.]10[.]34` → authorized for `libero[.]it`
 
 Claimed organization:
-- Duolingo
+- `Duolingo`
 
 The authenticated domain and the claimed organization are therefore different.
 
@@ -117,19 +117,19 @@ The authenticated domain and the claimed organization are therefore different.
 
 The message contained a valid DKIM signature associated with:
 
-- d=libero[.]it
-- s=s2021
+- `d=libero[.]it`
+- `s=s2021`
 
 The receiving system reported:
 
-- DKIM_VALID
-- DKIM_VALID_AU
-- DKIM_VALID_EF
-- DKIM_SIGNED
+- `DKIM_VALID`
+- `DKIM_VALID_AU`
+- `DKIM_VALID_EF`
+- `DKIM_SIGNED`
 
-The DKIM signature therefore successfully validated against libero[.]it. This confirms that the message was cryptographically signed for the libero[.]it domain.
+The DKIM signature therefore successfully validated against `libero[.]it`. This confirms that the message was cryptographically signed for the `libero[.]it` domain.
 
-However, DKIM authentication does not establish that the sender was affiliated with Duolingo.
+However, DKIM authentication does not establish that the sender was affiliated with `Duolingo`.
 
 **Authentication assessment**
 
@@ -138,7 +138,7 @@ The authentication results demonstrate:
 - SPF  → PASS
 - DKIM → PASS
 
-These results authenticate the libero[.]it sending identity and infrastructure. They do not authenticate the claimed Duolingo identity.
+These results authenticate the `libero[.]it` sending identity and infrastructure. They do not authenticate the claimed `Duolingo` identity.
 
 This distinction is important because a malicious actor can use a legitimate email service or a domain they control while successfully passing SPF and DKIM.
 
@@ -150,17 +150,17 @@ This distinction is important because a malicious actor can use a legitimate ema
 
 The message presents three separate identity elements:
 
-- Display name: Duolingo
-- From: duolingo[.]ads[@]libero[.]it
-- Reply-To: info[@]duolingo-team[.]com
+- Display name: `Duolingo`
+- From: `duolingo[.]ads[@]libero[.]it`
+- Reply-To: `info[@]duolingo-team[.]com`
 
-The use of the Duolingo display name with a libero[.]it sender address is inconsistent with a typical corporate sender identity.
+The use of the `Duolingo` display name with a `libero[.]it` sender address is inconsistent with a typical corporate sender identity.
 
 The Reply-To address is more significant because replies would be directed to:
 
-- info[@]duolingo-team[.]com
+- `info[@]duolingo-team[.]com`
 
-The domain duolingo-team[.]com was registered on 2025-07-10, approximately three days before the observed email.
+The domain `duolingo-team[.]com` was registered on `2025-07-10`, approximately three days before the observed email.
 
 The timing is relevant to the investigation but does not independently identify the domain owner or prove malicious registration.
 
@@ -178,19 +178,21 @@ creates a significant brand-impersonation concern.
 
 **Reference:** See Appendix B, Section 4.
 
-6. Content Analysis
+---
 
-The message states that the sender is Roger Chapman and claims to work at Duolingo.
+## 6. Content Analysis
 
-The message describes the recipient as someone who actively shares content related to linguistic education and proposes a collaboration.
+The message states that the sender is `Roger Chapman` and claims to work at `Duolingo`.
 
-The message uses generic marketing and collaboration language and attempts to establish credibility through the Duolingo brand.
+The message describes the recipient as someone who actively shares content related to `linguistic education` and `proposes a collaboration`.
+
+The message uses generic marketing and collaboration language and attempts to establish credibility through the `Duolingo` brand.
 
 The supplied message does not contain a technical exploit, credential-harvesting link, or malicious attachment.
 
 However, the social-engineering pretext is consistent with an attempt to establish communication with the recipient while presenting a potentially misleading organizational identity.
 
-Reference: See Appendix B, Section 5.
+**Reference:** See Appendix B, Section 5.
 
 7. Attachment Analysis
 
