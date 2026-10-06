@@ -671,6 +671,36 @@ inquiry[@]mydfir[.]com
 The Received: headers indicate that the message was submitted through authenticated SMTP (ESMTPSA) to Italiaonline/Libero infrastructure before being delivered to the recipient mail server.
 
 ```
+---
+
+**B.2 Mail-path interpretation**
+
+```text
+
+90[.]160[.]50[.]35
+    │
+    │ ESMTPSA
+    ↓
+smtp-34[.]iol[.]local
+    │
+    │ SMTP
+    ↓
+213[.]209[.]10[.]34
+smtp-34[.]italiaonline[.]it
+    │
+    │ ESMTPS
+    ↓
+srv7[.]swhc[.]ca
+    │
+    │ LMTP
+    ↓
+inquiry[@]mydfir[.]com
+
+```
+
+The Received: headers indicate that the message was submitted through authenticated SMTP (ESMTPSA) to Italiaonline/Libero infrastructure before being delivered to the recipient mail server.
+
+---
 
 **B.3 Authentication evidence**
 
@@ -690,6 +720,8 @@ s=s2021
 
 The authentication results validate the libero[.]it sending identity and do not independently validate the claimed Duolingo identity.
 
+---
+
 **B.4 Sender and Reply-To evidence**
 
 ```text
@@ -703,6 +735,8 @@ info@duolingo-team.com
 ```
 
 This mismatch is relevant because the visible brand identity differs from both the sender and Reply-To domains.
+
+---
 
 **B.5 Message content**
 
@@ -728,6 +762,8 @@ Roger Chapman
 ```
 
 No hyperlink or attachment was identified in the supplied MIME content.
+
+---
 
 **B.6 SpamAssassin evidence**
 
