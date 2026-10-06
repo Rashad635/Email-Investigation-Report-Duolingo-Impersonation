@@ -9,7 +9,7 @@
 
 ## 1. Incident Overview
 
-On **2025-07-13 at 15:50:03 UTC**, an email was delivered to `inquiry[@]mydfir[.]com` claiming to represent Duolingo and proposing a content collaboration.
+On **2025-07-13 15:50:03 UTC**, an email was delivered to `inquiry[@]mydfir[.]com` claiming to represent Duolingo and proposing a content collaboration.
 
 The message identified the sender as:
 
